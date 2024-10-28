@@ -1,0 +1,32 @@
+package demo;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class UpdateApp
+{
+	
+
+	public static void main(String[] args)
+	{
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("dev");
+		EntityManager em=emf.createEntityManager();
+		User user = em.find(User.class,102);
+		if (user != null) {
+            // Updating user fields
+            user.setName("obul");
+            user.setEmail("obul@gmail.com");
+            user.setPhone(9908586764l);
+
+            // EntityManager will automatically persist changes due to @Transactional
+            System.out.println("updated successfully");
+        } else {
+            System.out.println("Id not Found");
+        }
+    
+		
+		
+	}
+
+}

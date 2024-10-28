@@ -1,0 +1,24 @@
+package ums;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class InsertApp 
+{
+
+	public static void main(String[] args)
+	{
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("dev");
+		EntityManager em=emf.createEntityManager();
+		
+		User u=new User();
+		u.setId(1);
+		u.setName("hati");
+		u.setUsername("hari1");
+		u.setPhone(990987667l);
+		u.setPassword("123");
+		
+		
+	}
+}
